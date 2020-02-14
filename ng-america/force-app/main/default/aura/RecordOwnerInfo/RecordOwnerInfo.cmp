@@ -1,0 +1,15 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global"
+                controller="RecordOwnerInfoController">
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="oUser" type="user" default="{'sobjectType' : 'User'}" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <lightning:card title="Owner Info" class="slds-p-around_medium">
+        <div>
+            Name: <span>{!v.oUser.Name}</span>
+        </div>
+        <div class="slds-grid slds-wrap ">
+            <img src="{!v.oUser.FullPhotoUrl}" alt="{!v.oUser.Name}" class="roundImg " />
+        </div>
+    </lightning:card>
+</aura:component>
